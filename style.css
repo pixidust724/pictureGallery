@@ -1,55 +1,63 @@
 /* the body tag contains everything on the page (Good to start with body first)*/
 body {
   font-family: 'Asap', sans-serif;
-  font-size: 16px;
-  background-color: #004d9d;
+  font-size: 19px;
+  background-color: #d3d3d3;
   color: #ffffff;
 }
 
 a {
-  /* We need to specify a color for our links, otherwise they will use default blue */
   color: #ffffff;
-  /* This removes the default underline */
   text-decoration: none;
 }
 
 section {
-  /* vh stands for viewport height, meaning it will be relative to the height of our browser window   */
   height: 100vh;
   background-image: url(photo_2020-05-13_17-15-51.jpg);
-  /* our background image will cover the full width and height of our section without skewing or repeating the image */
+  ;
   background-size: cover;
-/*  this will fix the background to the browser viewport rather than to the section create a reveal affect when we scroll */
   background-attachment: fixed;
 }
 
 header {
-  /* using fixed position allows us to precisely position an element in relation to the browser viewport   */
   position: fixed;
   top: 20px;
   left: 20px;
 }
 footer {
   position: fixed;
-  bottom: 20px;
+  bottom: 30px;
   left: 20px;
 }
 
 h1 {
-  font-size: 24px;
-  /* margins are the go-to property for when we want to create space between elements on our page   */
-  margin-bottom: 5px;
-}
-/* this will select only a tags that are inside of footer tag*/
-footer a {
-  margin-right: 5px;
+  font-size: 1.5rem;
+  margin-bottom: 8px;
 }
 
-/* we can apply styles to elements based on whether we are hovering over them, this is called a pseudo selector */
-a:hover {
-  color: #dddddd;
+footer a {
+  display: inline-block;
+  position: relative;
+  margin-right: 10px;
 }
-/* this will apply styles to any element in our html which has a "class" attribute of "image_2" */
+
+a:after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  height: 0.1em;
+  background-color: #ffffff;
+  width: 0;
+  transition: width 0.4s, left 0.4s;
+  left: 50%;
+}
+
+a:hover:after {
+  width: 100%;
+  left: 0;
+}
+
 .image_2{
   background-image: url(photo_2020-05-13_17-15-52.jpg);
 }
